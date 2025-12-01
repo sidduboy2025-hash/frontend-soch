@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 20% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 18% 12%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 190 100% 50%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 210 10% 65%;
+
+    --accent: 190 100% 50%;
+    --accent-foreground: 220 20% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 15% 22%;
+    --input: 220 15% 20%;
+    --ring: 190 100% 50%;
+
+    --radius: 0.75rem;
+
+    --hero-gradient-start: 220 25% 10%;
+    --hero-gradient-end: 220 20% 8%;
+    
+    --card-hover: 220 18% 15%;
+    --card-border: 220 15% 25%;
+    
+    --sidebar-background: 220 20% 9%;
+    --sidebar-foreground: 210 15% 85%;
+    --sidebar-primary: 190 100% 50%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 220 15% 22%;
+    --sidebar-ring: 190 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+
+  /* Smooth scrolling for horizontal carousels */
+  .horizontal-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .horizontal-scroll::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .horizontal-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .horizontal-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .horizontal-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
